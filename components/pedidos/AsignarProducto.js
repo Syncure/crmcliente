@@ -30,8 +30,10 @@ const AsignarProducto = () => {
     useEffect(() => {
         // TODO: Funcion para pasar al state
         agregarProductos(producto);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [producto]);
-    //eslint-disable-next-line
+   
     
     const seleccionarProducto = producto => {
         setProducto(producto);

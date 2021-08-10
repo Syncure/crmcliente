@@ -35,8 +35,9 @@ const AsignarCliente = () => {
     
     useEffect(() => {
         agregarCliente(cliente);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cliente]);
-    //eslint-disable-next-line
+    
 
     const seleccionarCliente = clientes => {
         setClientes(clientes)

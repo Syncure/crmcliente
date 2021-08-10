@@ -68,12 +68,14 @@ const Pedido = ({pedido}) => {
 
     
     useEffect(() => {
+        
         if(estadoPedido) {
             setEstadoPedido(estadoPedido);
         }
         clasePedido();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ estadoPedido ]);
-    //eslint-disable-next-line
+    
 
     // Funcion que modifica el color del pedido de acuerdo a su estado
     const clasePedido = () => {

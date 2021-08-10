@@ -11,8 +11,9 @@ export const ResumenPedido = () => {
     
     useEffect(() => {
         actualizarTotal();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productos]);
-    //eslint-disable-next-line
+    
     
 
     // console.log(productos);

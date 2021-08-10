@@ -21,7 +21,7 @@ const OBTENER_CLIENTES_USUARIO = gql`
     }
 `;
 
-export default function Index() {
+const Index = () => {
 
   const router = useRouter();
 
@@ -37,8 +37,10 @@ export default function Index() {
   
   // Si no hay información
   if(!data.obtenerClientesVendedor){
-    return router.push('/login');
+    router.push('/login');
+    return null;
   }
+  
 
   return (
     <Layout>
@@ -72,3 +74,6 @@ export default function Index() {
     </Layout>
   )
 }
+
+export default Index;
+
