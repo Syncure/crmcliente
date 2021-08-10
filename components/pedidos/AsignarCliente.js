@@ -32,9 +32,11 @@ const AsignarCliente = () => {
     // console.log(data);
     // console.log(error);
     
+    
     useEffect(() => {
         agregarCliente(cliente);
     }, [cliente]);
+    //eslint-disable-next-line
 
     const seleccionarCliente = clientes => {
         setClientes(clientes)

@@ -30,7 +30,7 @@ const OBTENER_PRODUCTOS = gql`
     }
 `;
 
-const nuevoproducto = () => {
+const NuevoProducto = () => {
 
     // Use state
     const [ mensaje, setMensaje ] = useState(null)
@@ -195,4 +195,4 @@ const nuevoproducto = () => {
     )
 }
 
-export default nuevoproducto
+export default NuevoProducto

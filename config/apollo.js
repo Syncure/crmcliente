@@ -3,10 +3,10 @@ import fetch from 'node-fetch';
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-    uri: 'https://afternoon-tor-05688.herokuapp.com',
+    uri: 'http://localhost:4000/',
     fetch
 })
-
+// https://afternoon-tor-05688.herokuapp.com
 const authLink = setContext((_, {headers}) => {
 
     // Leer el storage almacenado

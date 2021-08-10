@@ -18,7 +18,7 @@ const MEJORES_CLIENTES = gql`
     }
 `;
 
-const mejoresclientes = () => {
+const MejoresClientes = () => {
 
     const { data, loading, error, startPolling, stopPolling } = useQuery(MEJORES_CLIENTES);
 
@@ -76,4 +76,4 @@ const mejoresclientes = () => {
     )
 }
 
-export default mejoresclientes
+export default MejoresClientes

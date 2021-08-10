@@ -1,7 +1,8 @@
 import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import { useQuery, gql } from '@apollo/client';
+
 import Pedido from '../components/Pedido';
 
 const OBTENER_PEDIDOS = gql`
@@ -27,7 +28,7 @@ const OBTENER_PEDIDOS = gql`
     }
 `;
 
-const pedidos = () => {
+const Pedidos = () => {
 
 
     // Consulta usequery
@@ -72,4 +73,4 @@ const pedidos = () => {
     )
 }
 
-export default pedidos
+export default Pedidos

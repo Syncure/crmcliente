@@ -8,9 +8,12 @@ export const ResumenPedido = () => {
     const pedidoContext = useContext(PedidoContext);
     const { productos, actualizarTotal } = pedidoContext;
 
+    
     useEffect(() => {
         actualizarTotal();
     }, [productos]);
+    //eslint-disable-next-line
+    
 
     // console.log(productos);
 

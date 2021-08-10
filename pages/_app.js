@@ -1,7 +1,7 @@
 import { ApolloProvider } from '@apollo/client';
 import client from '../config/apollo';
 import PedidoState from '../context/pedidos/PedidoState';
-import 'tailwindcss/tailwind.css';
+// import 'tailwindcss/tailwind.css';
 
 function MyApp({ Component, pageProps }) {
 

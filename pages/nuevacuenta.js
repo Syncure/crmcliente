@@ -16,7 +16,7 @@ const NUEVA_CUENTA = gql`
     }
 `;
 
-const nuevacuenta = () => {
+const NuevaCuenta = () => {
 
     // State para el mensaje
     const [ mensaje, setMensaje ] = useState(null);
@@ -211,4 +211,4 @@ const nuevacuenta = () => {
     )
 }
 
-export default nuevacuenta
+export default NuevaCuenta

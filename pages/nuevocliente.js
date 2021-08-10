@@ -26,7 +26,7 @@ const OBTENER_CLIENTES_USUARIO = gql`
     }
 `;
 
-const nuevoCliente = () => {
+const NuevoCliente = () => {
 
     // Usar el mutation // WAOWWWWWWW
     const [ nuevoCliente ] = useMutation(NUEVO_CLIENTE, {
@@ -243,4 +243,4 @@ const nuevoCliente = () => {
     )
 }
 
-export default nuevoCliente
+export default NuevoCliente

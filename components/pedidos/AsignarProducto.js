@@ -26,11 +26,13 @@ const AsignarProducto = () => {
 
     const { agregarProductos } = productoContext;
 
+    
     useEffect(() => {
         // TODO: Funcion para pasar al state
         agregarProductos(producto);
     }, [producto]);
-
+    //eslint-disable-next-line
+    
     const seleccionarProducto = producto => {
         setProducto(producto);
     }

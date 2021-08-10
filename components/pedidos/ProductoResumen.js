@@ -8,9 +8,11 @@ const ProductoResumen = ({producto}) => {
 
     const [ cantidad, setCantidad ] = useState(0);
 
+    
     useEffect(() => {
         actualizarCantidad();
     }, [cantidad]);
+    //eslint-disable-next-line
 
     const actualizarCantidad = () => {
         const nuevoProducto = {...producto, cantidad: Number(cantidad)}

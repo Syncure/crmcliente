@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import { useQuery, gql } from '@apollo/client';
+import Layout from '../components/Layout';
 import Productos from '../components/Productos';
 import Link from 'next/link';
 
@@ -15,7 +15,7 @@ const OBTENER_PRODUCTOS = gql`
     }
 `;
 
-const productos = () => {
+const Producto = () => {
 
     // Usar QUERY
     const { data, loading, error } = useQuery(OBTENER_PRODUCTOS);
@@ -75,4 +75,4 @@ const productos = () => {
     )
 }
 
-export default productos
+export default Producto
