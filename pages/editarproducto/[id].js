@@ -72,7 +72,7 @@ const EditarProducto = () => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'El cliente fue actualizado correctamente',
+                title: 'El producto fue actualizado correctamente',
                 showConfirmButton: false,
                 timer: 1500
             })
