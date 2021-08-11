@@ -61,7 +61,7 @@ const Pedido = ({pedido}) => {
         }
     });
 
-    console.log(pedido);
+    // console.log(pedido);
 
     const [ estadoPedido, setEstadoPedido ] = useState(estado);
     const [ clase, setClase ] = useState('');
