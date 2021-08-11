@@ -43,7 +43,7 @@ const MejoresClientes = () => {
     })
 
 
-    console.log(clienteGrafica);
+    // console.log(clienteGrafica);
 
     return (
         <Layout>
