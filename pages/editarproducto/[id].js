@@ -53,31 +53,29 @@ const EditarProducto = () => {
 
     // Editar producto
     const [ actualizarProducto ] = useMutation(ACTUALIZAR_PRODUCTO,
-                                              
         {
-                update(cache, { data: { actualizarProducto } }) {
-                    // Actualizar Producto
-                    const { obtenerProductos } = cache.readQuery({
-                        query: OBTENER_PRODUCTOS
-                    });
+            update(cache, { data: { actualizarProducto } }) {
+                // Actualizar Producto
+                const { obtenerProductos } = cache.readQuery({
+                    query: OBTENER_PRODUCTOS
+                });
 
-                    const productosActualizados = obtenerProductos.map(producto =>
-                        producto.id === id ? actualizarProducto : producto
-                      );
+                const productosActualizados = obtenerProductos.map(producto =>
+                    producto.id === id ? actualizarProducto : producto
+                  );
 
-
-                    // Actualizar Producto Actual
-                    cache.writeQuery({
-                        query: OBTENER_PRODUCTOS,
-                        variables: { id },
-                        data: {
-                            obtenerProductos : productosActualizados
-                        }
-                    });
-                }
-          }
-                                               
-    )
+        
+                // Actualizar Producto Actual
+                cache.writeQuery({
+                    query: OBTENER_PRODUCTOS,
+                    variables: { id },
+                    data: {
+                        obtenerProductos : productosActualizados
+                    }
+                });
+            }
+      }
+    );
     if(loading) return null;
     // Validar Formulario
     const schemaValidacion = Yup.object({
