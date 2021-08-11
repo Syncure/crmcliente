@@ -27,9 +27,9 @@ const Producto = () => {
 
     const { obtenerProductos } = data;
 
-    console.log(obtenerProductos);
-    console.log(loading);
-    console.log(error);
+   // console.log(obtenerProductos);
+   // console.log(loading);
+   // console.log(error);
 
     return (
         <div>
