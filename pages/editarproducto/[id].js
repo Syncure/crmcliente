@@ -7,13 +7,24 @@ import { useMutation, useQuery, gql } from '@apollo/client';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-const OBTENER_PRODUCTOS = gql`
+const OBTENER_PRODUCTOS_ID = gql`
     query obtenerProductoPorId($id: ID!) {
         obtenerProductoPorId(id: $id) {
         nombre
         id
         existencia
         precio
+        }
+    }
+`;
+
+const OBTENER_PRODUCTOS = gql`
+    query obtenerProductos {
+        obtenerProductos {
+            id
+            nombre
+            precio
+            existencia
         }
     }
 `;
@@ -34,14 +45,39 @@ const EditarProducto = () => {
     const { query: { id } } = router;
 
     // Consultar producto por ID
-    const { data, loading, error } = useQuery(OBTENER_PRODUCTOS,{
+    const { data, loading, error } = useQuery(OBTENER_PRODUCTOS_ID,{
         variables: {
             id
         }
     });
 
     // Editar producto
-    const [ actualizarProducto ] = useMutation(ACTUALIZAR_PRODUCTO)
+    const [ actualizarProducto ] = useMutation(ACTUALIZAR_PRODUCTO,
+                                              
+        {
+                update(cache, { data: { actualizarProducto } }) {
+                    // Actualizar Producto
+                    const { obtenerProductos } = cache.readQuery({
+                        query: OBTENER_PRODUCTOS
+                    });
+
+                    const productosActualizados = obtenerProductos.map(producto =>
+                        producto.id === id ? actualizarProducto : producto
+                      );
+
+
+                    // Actualizar Producto Actual
+                    cache.writeQuery({
+                        query: OBTENER_PRODUCTOS,
+                        variables: { id },
+                        data: {
+                            obtenerProductos : productosActualizados
+                        }
+                    });
+                }
+          }
+                                               
+    )
     if(loading) return null;
     // Validar Formulario
     const schemaValidacion = Yup.object({
