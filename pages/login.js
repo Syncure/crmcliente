@@ -45,8 +45,7 @@ const Login = () => {
         }),
         onSubmit: async valores => {
             const { email, password } = valores
-            console.log(email, password);
-
+            
             try {
                 const { data } = await autenticarUsuario({
                     variables:{
