@@ -30,13 +30,13 @@ const MejoresVendedores = () => {
         }
     }, [startPolling, stopPolling]);
 
-    console.log(data);
-    console.log(loading);
-    console.log(error);
+   // console.log(data);
+   // console.log(loading);
+   // console.log(error);
 
     if (loading) return 'Cargando...';
 
-    console.log(data);
+   // console.log(data);
 
     const { mejoresVendedores } = data;
 
@@ -49,7 +49,7 @@ const MejoresVendedores = () => {
         }
     })
 
-    console.log(vendedorGrafica);
+    // console.log(vendedorGrafica);
 
     return (
         <Layout>
