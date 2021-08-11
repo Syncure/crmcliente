@@ -67,7 +67,7 @@ const Productos = ({ productos }) => {
                     })
 
                     // Mostrar una alerta
-                    console.log(data);
+                    // console.log(data);
                     Swal.fire(
                         'Eliminado',
                         data.eliminarProducto,
